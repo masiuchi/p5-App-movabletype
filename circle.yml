@@ -1,0 +1,7 @@
+machine:
+  services:
+    - docker
+
+test:
+  override:
+    - docker run -v $PWD:/root/module -w /root/module perl:5.24 bash -c "cpanm --quiet --installdeps --notest . && perl Build.PL && ./Build && ./Build test"
