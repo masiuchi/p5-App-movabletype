@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "A command line interface for Movable Type.",
    "author" : [
       "Masahiro Iuchi <masahiro.iuchi@gmail.com>"
    ],
@@ -54,6 +54,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com///issues"
+      },
+      "homepage" : "https://github.com//",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com//.git",
+         "web" : "https://github.com//"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:MASIUCHI",
    "x_serialization_backend" : "JSON::PP version 2.27300"

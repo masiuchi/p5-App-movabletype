@@ -47,15 +47,17 @@ __END__
 
 =head1 NAME
 
-App::movabletype - It's new $module
+App::movabletype - A command line interface for Movable Type.
 
 =head1 SYNOPSIS
 
-    use App::movabletype;
+    # cd (your movable type directory)
+    $ mt core version
 
 =head1 DESCRIPTION
 
-App::movabletype is ...
+App::movabletype is a command line interface for Movable Type.
+It can be extended by MT registry.
 
 =head1 LICENSE
 
