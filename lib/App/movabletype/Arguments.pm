@@ -2,6 +2,8 @@ package App::movabletype::Arguments;
 use strict;
 use warnings;
 
+use File::Basename ();
+
 use base 'Class::Accessor::Fast';
 __PACKAGE__->mk_wo_accessors(qw/ argv /);
 
@@ -19,8 +21,7 @@ sub params {
 
 sub command_string {
     my $self   = shift;
-    my $script = $0;
-    $script =~ s/^\.\///;
+    my $script = File::Basename::basename($0);
     join ' ', ( $script, @{ $self->commands } );
 }
 
