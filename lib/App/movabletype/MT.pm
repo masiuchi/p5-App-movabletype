@@ -10,7 +10,7 @@ use App::movabletype::Registry;
 
 use constant DEFAULT_CONFIG => 'mt-config.cgi';
 
-our ( $HOME, $CONFIG, $MT );
+our $MT;
 
 sub instance {
     my $class = shift;
@@ -18,8 +18,8 @@ sub instance {
 
     return $MT if $MT;
 
-    $HOME = $options->{mt_home} || $ENV{MT_HOME};
-    $CONFIG = $options->{mt_config} || $ENV{MT_CONFIG} || DEFAULT_CONFIG;
+    $ENV{MT_HOME} ||= $options->{mt_home};
+    $ENV{MT_CONFIG} ||= $options->{mt_config} || DEFAULT_CONFIG;
 
     _search_home() or return;
     _use_mt()      or return;
@@ -39,20 +39,21 @@ sub commands_registry {
 }
 
 sub _use_mt {
-    eval "use lib '$HOME/lib'; 1"    or return;
-    eval "use lib '$HOME/extlib'; 1" or return;
-    eval "use MT; 1"                 or return;
+    eval "use lib '$ENV{MT_HOME}/lib'; 1"    or return;
+    eval "use lib '$ENV{MT_HOME}/extlib'; 1" or return;
+    eval "use MT; 1"                         or return;
     1;
 }
 
 sub _search_home {
-    unless ($HOME) {
-        $HOME = Cwd::getcwd();
-        $HOME = File::Basename::dirname($HOME)
-            until _is_root($HOME) || _is_valid_settings( $HOME, $CONFIG );
+    unless ( $ENV{MT_HOME} ) {
+        $ENV{MT_HOME} = Cwd::getcwd();
+        $ENV{MT_HOME} = File::Basename::dirname( $ENV{MT_HOME} )
+            until _is_root( $ENV{MT_HOME} )
+            || _is_valid_settings( $ENV{MT_HOME}, $ENV{MT_CONFIG} );
     }
-    $HOME =~ s/\/$// unless _is_root($HOME);
-    _is_valid_settings( $HOME, $CONFIG );
+    $ENV{MT_HOME} =~ s/\/$// unless _is_root( $ENV{MT_HOME} );
+    _is_valid_settings( $ENV{MT_HOME}, $ENV{MT_CONFIG} );
 }
 
 sub _expand_handlers {
