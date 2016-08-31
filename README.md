@@ -4,7 +4,7 @@ App::movabletype - A command line interface for Movable Type.
 
 # SYNOPSIS
 
-    # cd (your movable type directory)
+    $ cd (your movable type directory)
     $ mt core version
 
 # DESCRIPTION

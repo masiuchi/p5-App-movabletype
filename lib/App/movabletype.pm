@@ -51,7 +51,7 @@ App::movabletype - A command line interface for Movable Type.
 
 =head1 SYNOPSIS
 
-    # cd (your movable type directory)
+    $ cd (your movable type directory)
     $ mt core version
 
 =head1 DESCRIPTION
