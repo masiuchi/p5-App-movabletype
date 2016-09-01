@@ -2,6 +2,8 @@ package App::movabletype::Registry::Cli;
 use strict;
 use warnings;
 
+use App::movabletype;
+
 sub registry {
     {   help    => 'cli commands.',
         version => {

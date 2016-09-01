@@ -7,6 +7,7 @@ use File::Basename ();
 use File::Spec     ();
 
 use App::movabletype::Registry;
+use App::movabletype::Registry::Cli;
 
 use constant DEFAULT_CONFIG => 'mt-config.cgi';
 
@@ -34,8 +35,12 @@ sub instance {
 }
 
 sub commands_registry {
-    instance() or return;
-    $MT->registry('commands') || {};
+    if ( instance() ) {
+        $MT->registry('commands');
+    }
+    else {
+        +{ cli => App::movabletype::Registry::Cli->registry };
+    }
 }
 
 sub _use_mt {
