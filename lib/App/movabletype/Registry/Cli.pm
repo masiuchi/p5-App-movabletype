@@ -3,8 +3,7 @@ use strict;
 use warnings;
 
 sub registry {
-    {
-        help => 'cli commands.',
+    {   help    => 'cli commands.',
         version => {
             code => \&_version,
             help => 'Get App::movabletype version.',
@@ -13,11 +12,11 @@ sub registry {
             code => \&_perl_version,
             help => 'Get Perl version.',
         },
-    }
+    };
 }
 
 sub _version {
-    print $App::movabletype::VERSION . "\n";
+    print 'App::movabletype ' . $App::movabletype::VERSION . "\n";
 }
 
 sub _perl_version {
