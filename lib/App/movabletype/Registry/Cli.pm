@@ -18,11 +18,11 @@ sub registry {
 }
 
 sub _version {
-    print 'App::movabletype ' . $App::movabletype::VERSION . "\n";
+    print "App::movabletype $App::movabletype::VERSION\n";
 }
 
 sub _perl_version {
-    print $^V . "\n";
+    print "Perl $^V\n";
 }
 
 1;
