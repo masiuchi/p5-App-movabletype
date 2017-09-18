@@ -4,7 +4,7 @@
       "Masahiro Iuchi <masahiro.iuchi@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.4, CPAN::Meta::Converter version 2.150005",
+   "generated_by" : "Minilla/v3.0.13, CPAN::Meta::Converter version 2.150010",
    "license" : [
       "perl_5"
    ],
@@ -56,16 +56,16 @@
    "release_status" : "unstable",
    "resources" : {
       "bugtracker" : {
-         "web" : "https://github.com///issues"
+         "web" : "https://github.com/masiuchi/p5-App-movabletype/issues"
       },
-      "homepage" : "https://github.com//",
+      "homepage" : "https://github.com/masiuchi/p5-App-movabletype",
       "repository" : {
          "type" : "git",
-         "url" : "git://github.com//.git",
-         "web" : "https://github.com//"
+         "url" : "git://github.com/masiuchi/p5-App-movabletype.git",
+         "web" : "https://github.com/masiuchi/p5-App-movabletype"
       }
    },
    "version" : "0.01",
    "x_authority" : "cpan:MASIUCHI",
-   "x_serialization_backend" : "JSON::PP version 2.27300"
+   "x_serialization_backend" : "JSON::PP version 2.27400_02"
 }
