@@ -2,7 +2,7 @@ package App::movabletype::Registry;
 use strict;
 use warnings;
 
-my $prefix = '$core::App::movabletype::Registry';
+my $prefix = '$Core::App::movabletype::Registry';
 
 sub registry {
     {   cli   => "${prefix}::Cli::registry",

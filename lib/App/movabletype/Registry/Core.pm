@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 sub registry {
-    {   help    => 'Get MT core information.',
+    {   help => 'Get MT core information.',
         path => {
             code => \&_path,
             help => 'Get installed path.',
@@ -20,15 +20,18 @@ sub registry {
 }
 
 sub _path {
-    print $MT::MT_DIR . "\n";
+    my ( $app, $args ) = @_;
+    print $ENV{MT_HOME} . "\n";
 }
 
 sub _schema_version {
-    print $MT::SCHEMA_VERSION . "\n";
+    my ( $app, $args ) = @_;
+    print $app->schema_version . "\n";
 }
 
 sub _version {
-    print $MT::PRODUCT_VERSION . "\n";
+    my ( $app, $args ) = @_;
+    print $app->product_version . "\n";
 }
 
 1;

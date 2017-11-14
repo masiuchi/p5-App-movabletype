@@ -27,7 +27,7 @@ sub run {
         return;
     }
 
-    $code->( $self->{args} );
+    $code->( App::movabletype::MT->instance, $self->{args} );
 }
 
 sub print_help {

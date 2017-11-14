@@ -3,17 +3,26 @@ use strict;
 use warnings;
 
 sub registry {
-    {   help => 'manipulate entries.',
+    {   help  => 'manipulate entries.',
         count => {
-            code => sub { print "entry count\n" },
+            code => sub {
+                my ( $app, $args ) = @_;
+                print "entry count\n";
+            },
             help => 'the number of entries.',
         },
         list => {
-            code => sub { print "entry list\n" },
+            code => sub {
+                my ( $app, $args ) = @_;
+                print "entry list\n";
+            },
             help => 'show entries.',
         },
         show => {
-            code => sub { print "entry show\n" },
+            code => sub {
+                my ( $app, $args ) = @_;
+                print "entry show\n";
+            },
             help => 'show one entries.',
         },
     };

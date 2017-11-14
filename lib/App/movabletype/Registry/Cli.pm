@@ -2,8 +2,6 @@ package App::movabletype::Registry::Cli;
 use strict;
 use warnings;
 
-use App::movabletype;
-
 sub registry {
     {   help    => 'cli commands.',
         version => {
@@ -18,10 +16,12 @@ sub registry {
 }
 
 sub _version {
+    my ($app, $args) = @_;
     print "App::movabletype $App::movabletype::VERSION\n";
 }
 
 sub _perl_version {
+    my ($app, $args) = @_;
     print "Perl $^V\n";
 }
 
