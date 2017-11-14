@@ -44,9 +44,8 @@ sub commands_registry {
 }
 
 sub _use_mt {
-    eval "use lib '$ENV{MT_HOME}/lib'; 1"    or return;
-    eval "use lib '$ENV{MT_HOME}/extlib'; 1" or return;
-    eval "use MT; 1"                         or return;
+    unshift @INC, "$ENV{MT_HOME}/lib", "$ENV{MT_HOME}/extlib";
+    eval { require MT } or return;
     1;
 }
 
