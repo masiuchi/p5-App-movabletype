@@ -9,6 +9,7 @@ sub registry {
         core  => "${prefix}::Core::registry",
         entry => "${prefix}::Entry::registry",
         site  => "${prefix}::Site::registry",
+        task  => "${prefix}::Task::registry",
     };
 }
 
