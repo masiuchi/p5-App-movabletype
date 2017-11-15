@@ -44,9 +44,14 @@ sub _search_command {
     my $self = shift;
     my $r    = $self->{registry};
     return unless _is_hash($r);
+    $self->{args}{arguments} = [ @{ $self->{args}->commands } ];
+    my @new_commands;
     for my $p ( @{ $self->{args}->commands } ) {
-        $r = $r->{$p} or return;
+        last unless $r->{$p};
+        $r = $r->{$p};
+        push @new_commands, shift @{ $self->{args}{arguments} };
     }
+    $self->{args}{commands} = \@new_commands;
     return unless _is_hash($r);
     $self->{registry} = $r;
     1;
