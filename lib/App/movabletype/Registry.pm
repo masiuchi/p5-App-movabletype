@@ -5,11 +5,12 @@ use warnings;
 my $prefix = '$Core::App::movabletype::Registry';
 
 sub registry {
-    {   cli   => "${prefix}::Cli::registry",
-        core  => "${prefix}::Core::registry",
-        entry => "${prefix}::Entry::registry",
-        site  => "${prefix}::Site::registry",
-        task  => "${prefix}::Task::registry",
+    {   cli     => "${prefix}::Cli::registry",
+        core    => "${prefix}::Core::registry",
+        entry   => "${prefix}::Entry::registry",
+        site    => "${prefix}::Site::registry",
+        task    => "${prefix}::Task::registry",
+        tmpltag => "${prefix}::TemplateTag::registry",
     };
 }
 
