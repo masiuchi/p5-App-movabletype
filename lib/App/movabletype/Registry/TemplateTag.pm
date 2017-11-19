@@ -10,6 +10,10 @@ sub registry {
             code => \&_list,
             help => 'Get template tag list.',
         },
+        modifier => {
+            code => \&_modifier,
+            help => 'Get template tag modifier list.',
+        },
     };
 }
 
@@ -57,6 +61,22 @@ sub _list {
     }
 
     print $table;
+}
+
+sub _modifier {
+    my ( $app, $args ) = @_;
+
+    my $search_str = $args->{arguments}->[0];
+    my $regex
+        = defined $search_str && $search_str ne '' ? qr/$search_str/i : qr/./;
+
+    for my $mod (
+        sort grep {/$regex/}
+        keys %{ $app->registry( 'tags', 'modifier' ) }
+        )
+    {
+        print $mod . "\n";
+    }
 }
 
 1;
