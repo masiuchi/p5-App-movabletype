@@ -5,6 +5,7 @@ requires 'perl', '5.008001';
 requires 'Class::Accessor::Fast';
 requires 'Class::Method::Modifiers';
 requires 'Data::Dumper::Concise';
+requires 'Term::ANSIColor';
 requires 'Text::Table';
 
 on 'test' => sub {

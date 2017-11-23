@@ -2,6 +2,7 @@ package App::movabletype::Registry::Plugin;
 use strict;
 use warnings;
 
+use Term::ANSIColor ();
 use Text::Table;
 
 sub registry {
@@ -36,9 +37,12 @@ sub _list {
 
     for my $p (@plugins) {
         next if $p->{object} && !$p->{object}->isa('MT::Plugin');
-        my $key    = $p->{key};
-        my $name   = $p->{object} ? $p->{object}->label : $p->{key};
-        my $status = $p->{object} ? 'enabled' : 'disabled';
+        my $key = $p->{key};
+        my $name = $p->{object} ? $p->{object}->label : $p->{key};
+        my $status
+            = $p->{object}
+            ? Term::ANSIColor::colored( 'enabled',  'green' )
+            : Term::ANSIColor::colored( 'disabled', 'red' );
         $table->add( $key, $name, $status );
     }
 

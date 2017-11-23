@@ -46,6 +46,7 @@
             "Class::Accessor::Fast" : "0",
             "Class::Method::Modifiers" : "0",
             "Data::Dumper::Concise" : "0",
+            "Term::ANSIColor" : "0",
             "Text::Table" : "0",
             "perl" : "5.008001"
          }
