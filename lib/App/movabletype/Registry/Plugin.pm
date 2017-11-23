@@ -64,7 +64,7 @@ sub _enable {
     my $cfg = $app->config;
     $cfg->PluginSwitch( "$plugin_key=1", 1 );
     $cfg->save_config;
-    $app->reboot;
+    $app->do_reboot;
     print qq{Enabled "$plugin_key".\n};
 }
 
@@ -83,7 +83,7 @@ sub _disable {
     my $cfg = $app->config;
     $cfg->PluginSwitch( "$plugin_key=0", 1 );
     $cfg->save_config;
-    $app->reboot;
+    $app->do_reboot;
     print qq{Disabled "$plugin_key".\n};
 }
 
