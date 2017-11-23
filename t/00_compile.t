@@ -7,6 +7,7 @@ use_ok $_ for qw(
     App::movabletype::Command
     App::movabletype::MT
     App::movabletype::Registry
+    App::movabletype::Registry::App
     App::movabletype::Registry::Cli
     App::movabletype::Registry::Config
     App::movabletype::Registry::Core

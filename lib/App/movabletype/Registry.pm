@@ -5,7 +5,8 @@ use warnings;
 my $prefix = '$Core::App::movabletype::Registry';
 
 sub registry {
-    {   cli        => "${prefix}::Cli::registry",
+    {   app        => "${prefix}::App::registry",
+        cli        => "${prefix}::Cli::registry",
         config     => "${prefix}::Config::registry",
         core       => "${prefix}::Core::registry",
         entry      => "${prefix}::Entry::registry",
