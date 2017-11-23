@@ -11,6 +11,7 @@ use_ok $_ for qw(
     App::movabletype::Registry::Config
     App::movabletype::Registry::Core
     App::movabletype::Registry::Entry
+    App::movabletype::Registry::Permission
     App::movabletype::Registry::Plugin
     App::movabletype::Registry::Site
     App::movabletype::Registry::Task
