@@ -16,6 +16,7 @@ use_ok $_ for qw(
     App::movabletype::Registry::Site
     App::movabletype::Registry::Task
     App::movabletype::Registry::TemplateTag
+    App::movabletype::Registry::Worker
 );
 
 done_testing;

@@ -14,6 +14,7 @@ sub registry {
         site       => "${prefix}::Site::registry",
         task       => "${prefix}::Task::registry",
         tmpltag    => "${prefix}::TemplateTag::registry",
+        worker     => "${prefix}::Worker::registry",
     };
 }
 
