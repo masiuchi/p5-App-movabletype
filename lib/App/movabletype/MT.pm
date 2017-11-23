@@ -25,7 +25,8 @@ sub instance {
     _search_home() or return;
     _use_mt()      or return;
 
-    $MT = MT->instance;
+    require MT::App;
+    $MT = MT::App->instance;
 
     my $registry = App::movabletype::Registry->registry;
     _expand_handlers($registry);
