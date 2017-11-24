@@ -9,6 +9,7 @@ sub registry {
         cli        => "${prefix}::Cli::registry",
         config     => "${prefix}::Config::registry",
         core       => "${prefix}::Core::registry",
+        db         => "${prefix}::Database::registry",
         entry      => "${prefix}::Entry::registry",
         permission => "${prefix}::Permission::registry",
         'plug-in'  => "${prefix}::Plugin::registry",
