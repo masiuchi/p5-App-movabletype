@@ -7,13 +7,13 @@ use_ok $_ for qw(
     App::movabletype::Command
     App::movabletype::MT
     App::movabletype::Registry
-    App::movabletype::Registry::App
     App::movabletype::Registry::Cli
     App::movabletype::Registry::Config
     App::movabletype::Registry::Core
     App::movabletype::Registry::Entry
     App::movabletype::Registry::Permission
     App::movabletype::Registry::Plugin
+    App::movabletype::Registry::Reboot
     App::movabletype::Registry::Site
     App::movabletype::Registry::Task
     App::movabletype::Registry::TemplateTag
@@ -21,4 +21,3 @@ use_ok $_ for qw(
 );
 
 done_testing;
-
